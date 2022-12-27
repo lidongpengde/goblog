@@ -61,15 +61,16 @@ func (*ArticlesController) Create(w http.ResponseWriter, r *http.Request) {
 	view.Render(w, view.D{}, "articles.create", "articles._form_field")
 }
 
-// Store 文章创建页面
+// Store 文章创建
 func (*ArticlesController) Store(w http.ResponseWriter, r *http.Request) {
 
 	// 1. 初始化数据
-	currentUser := auth.User()
+	//currentUser := auth.User()
+	user := auth.User()
 	_article := article.Article{
 		Title:  r.PostFormValue("title"),
 		Body:   r.PostFormValue("body"),
-		UserID: currentUser.ID,
+		UserID: user.ID,
 	}
 
 	// 2. 表单验证

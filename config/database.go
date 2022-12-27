@@ -10,7 +10,7 @@ func init() {
 		"mysql": map[string]interface{}{
 
 			// 数据库连接信息
-			"host":     config.Env("DB_HOST", "127.0.0.1"),
+			"host":     config.Env("DB_HOST", "9.135.107.183"),
 			"port":     config.Env("DB_PORT", "3306"),
 			"database": config.Env("DB_DATABASE", "goblog"),
 			"username": config.Env("DB_USERNAME", ""),
