@@ -37,5 +37,3 @@ func main() {
 	err := http.ListenAndServe(":"+c.GetString("app.port"), middlewares.RemoveTrailingSlash(router))
 	logger.LogError(err)
 }
-
-//测试git
